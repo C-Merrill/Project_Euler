@@ -1,0 +1,15 @@
+def populate_fibonacci(n):
+    items = [1,2]
+    for i in range(1,n-2):
+        items.append(items[-2]+items[-1])
+    return items
+
+def sum_fibonacci_evens(cap):
+    items = [1,2]
+    while items[-2]+items[-1]<cap:
+        items.append(items[-2]+items[-1])
+    items = filter(lambda x: x%2==0, items)
+    return sum(items)
+
+#prints the sum of fibonacci evens below 4 million
+print sum_fibonacci_evens(4000000)
