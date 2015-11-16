@@ -1,0 +1,10 @@
+def sum_mults(factor_array, cap):
+    excludes = []
+    for i in xrange(1,cap):
+        excludes.append(i)
+    for f in factor_array:
+        excludes = filter(lambda x: x%f!=0,excludes)
+    return sum(xrange(1,cap))-sum(excludes)
+
+#prints the sum of multiples of 3 and 5 less than 1000
+print sum_mults([3,5],1000)
